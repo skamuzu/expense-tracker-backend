@@ -7,11 +7,11 @@ class UserBase(BaseModel):
     email: EmailStr
 
 class UserCreate(UserBase):
-    password: Annotated[str, Field(min_length=3, max_length=50)]
+    password: Annotated[str, Field(min_length=8, max_length=50)]
 
 class UserRead(UserBase):
     id: int
     image_url: str | None = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
