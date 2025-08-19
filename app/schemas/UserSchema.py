@@ -8,9 +8,16 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     password: Annotated[str, Field(min_length=8, max_length=50)]
+    
+
 
 class UserRead(UserBase):
     id: int
+    
+class UserInDB(UserBase):
+    password: Annotated[str, Field(min_length=8, max_length=50)]
+    id: int
+    image_url: str | None = None
     image_url: str | None = None
 
     class Config:

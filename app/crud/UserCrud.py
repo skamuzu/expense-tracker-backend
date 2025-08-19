@@ -1,7 +1,7 @@
 from schemas.UserSchema import UserCreate
 from sqlalchemy.orm import Session
 from models.UserModel import User
-from auth.security import hash_password, verify_password
+from auth.security import hash_password
 
 
 def create_user(user: UserCreate, db:Session):
@@ -10,6 +10,6 @@ def create_user(user: UserCreate, db:Session):
     db.commit()
     db.refresh(db_user)
     return db_user
-    
-    
+
+
 

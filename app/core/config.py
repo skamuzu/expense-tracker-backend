@@ -7,6 +7,7 @@ ENV_PATH = Path(__file__).resolve().parent.parent.parent / ".env"
 
 class Settings(BaseSettings):
     DATABASE_URL: str
+    SECRET_KEY: str
 
     class Config:
         env_file = ENV_PATH
