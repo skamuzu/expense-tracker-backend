@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from core.config import mount_static
-from api.v1.endpoints.users import router as user_router
+from api.v1.endpoints.users import user_router
 
 
 app = FastAPI()
